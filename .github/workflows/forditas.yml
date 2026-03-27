@@ -9,7 +9,7 @@ jobs:
     - name: MSBuild beallitasa
       uses: microsoft/setup-msbuild@v2
     - name: Jatek leforditasa
-      run: msbuild DreeRally.sln /p:Configuration=Release /p:Platform=Win32 /p:WindowsTargetPlatformVersion=10.0 /p:PlatformToolset=v143
+      run: msbuild DreeRally.sln /p:Configuration=Release /p:Platform=Win32 /p:WindowsTargetPlatformVersion=10.0 /p:PlatformToolset=v141
     - name: Kesz fajlok kimentese
       uses: actions/upload-artifact@v4
       with:
