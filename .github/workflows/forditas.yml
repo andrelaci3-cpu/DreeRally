@@ -1,0 +1,19 @@
+name: DreeRally Keszites
+on: [workflow_dispatch, push]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: Kod letoltese
+      uses: actions/checkout@v4
+    - name: MSBuild beallitasa
+      uses: microsoft/setup-msbuild@v2
+    - name: Jatek leforditasa
+      run: msbuild DreeRally.sln /p:Configuration=Release
+    - name: Kesz fajlok kimentese
+      uses: actions/upload-artifact@v4
+      with:
+        name: DreeRally_Uj_Exe
+        path: |
+          **/*.exe
+          **/*.dll
